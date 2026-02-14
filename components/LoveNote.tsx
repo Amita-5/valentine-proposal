@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Sparkles, Heart } from 'lucide-react';
 
-const message = `Vignesh, from the moment you walked into my life, everything became brighter. You are my best friend, my rock, and my home. I love the way you laugh, the way you look at me, and how you make even the most ordinary days feel like a fairy tale. I want to spend every tomorrow by your side, making you feel as special as you make me feel. You are my forever and always.`;
+const message = `Vignesh, from the moment you walked into my life, everything became brighter. You are my rock and my home. I love the way you laugh and the way you look at me. I want to spend every tomorrow by your side, making you feel as special as you make me feel. You are my forever and always.`;
 
 export const LoveNote: React.FC = () => {
   const [displayedText, setDisplayedText] = useState('');
