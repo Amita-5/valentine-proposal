@@ -8,15 +8,15 @@ export const Footer: React.FC = () => {
       
       <div className="relative z-10 max-w-2xl mx-auto">
         <h4 className="font-serif-romantic text-4xl md:text-5xl text-rose-600 mb-8 glowing-text">
-          Forever Yours, Always.
+          Forever Yours, Vignesh.
         </h4>
         
         <p className="text-rose-400 text-xl font-light italic mb-12">
-          "In all the world, there is no heart for me like yours. In all the world, there is no love for you like mine."
+          "You are the best thing that has ever happened to me. Thank you for being you."
         </p>
         
         <div className="text-rose-200 text-sm uppercase tracking-[0.3em] font-medium">
-          Valentine's Day 2024
+          Our Special Valentine's Day 2026
         </div>
       </div>
 

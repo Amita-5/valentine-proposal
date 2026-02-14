@@ -1,8 +1,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, Heart } from 'lucide-react';
 
-const message = `From the moment you walked into my life, everything became brighter. You are my best friend, my rock, and my home. I love the way you laugh, the way you look at me, and how you make even the most ordinary days feel magical. I want to spend every tomorrow by your side, creating more of these beautiful memories together. You are my forever and always.`;
+const message = `Vignesh, from the moment you walked into my life, everything became brighter. You are my best friend, my rock, and my home. I love the way you laugh, the way you look at me, and how you make even the most ordinary days feel like a fairy tale. I want to spend every tomorrow by your side, making you feel as special as you make me feel. You are my forever and always.`;
 
 export const LoveNote: React.FC = () => {
   const [displayedText, setDisplayedText] = useState('');
@@ -41,11 +41,14 @@ export const LoveNote: React.FC = () => {
       className="py-24 px-6 bg-rose-50 flex flex-col items-center justify-center min-h-[40vh]"
     >
       <div className="max-w-2xl w-full bg-white/60 backdrop-blur-sm p-10 md:p-14 rounded-[2rem] shadow-sm border border-rose-100/50 relative">
-        <div className="absolute top-6 right-6 text-rose-200 animate-pulse">
+        <div className="absolute top-6 right-6 text-rose-300 animate-pulse">
           <Sparkles size={24} />
         </div>
+        <div className="absolute bottom-6 left-6 text-rose-300">
+          <Heart size={20} fill="currentColor" className="opacity-40" />
+        </div>
         
-        <h3 className="font-serif-romantic text-2xl text-rose-400 mb-8 text-center tracking-widest uppercase">My Dearest</h3>
+        <h3 className="font-serif-romantic text-2xl text-rose-400 mb-8 text-center tracking-widest uppercase">My Dearest Vignesh</h3>
         
         <p className="text-rose-800 text-xl md:text-2xl font-handwriting leading-relaxed min-h-[120px] text-center">
           {displayedText}

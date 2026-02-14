@@ -1,6 +1,6 @@
 
-import React, { useState, useEffect } from 'react';
-import { Heart, X } from 'lucide-react';
+import React, { useState } from 'react';
+import { Heart } from 'lucide-react';
 import canvasConfetti from 'https://cdn.skypack.dev/canvas-confetti';
 
 export const Proposal: React.FC = () => {
@@ -9,7 +9,8 @@ export const Proposal: React.FC = () => {
   const [noCount, setNoCount] = useState(0);
 
   const moveNoButton = () => {
-    const x = Math.random() * 200 - 100;
+    // Generate new position within a safe range
+    const x = Math.random() * 300 - 150;
     const y = Math.random() * 200 - 100;
     setNoButtonPos({ x, y });
     setNoCount(prev => prev + 1);
@@ -18,22 +19,22 @@ export const Proposal: React.FC = () => {
   const handleYes = () => {
     setIsYes(true);
     canvasConfetti({
-      particleCount: 150,
-      spread: 70,
+      particleCount: 200,
+      spread: 90,
       origin: { y: 0.6 },
       colors: ['#ff0000', '#ff69b4', '#ffffff', '#ffd700']
     });
   };
 
   const getNoText = () => {
-    const texts = ["No 🙈", "Are you sure? 🥺", "Really? 💔", "Think again! 🌹", "Please? 🧸", "Wrong button! 😂"];
+    const texts = ["No 🙈", "Wait, what? 🥺", "Wrong choice! 💔", "Vignesh, please? 🌹", "Click Yes! 🧸", "I'll keep running! 😂"];
     return texts[Math.min(noCount, texts.length - 1)];
   };
 
   return (
-    <section id="proposal" className="py-32 px-6 flex flex-col items-center justify-center bg-white overflow-hidden">
+    <section id="proposal" className="py-32 px-6 flex flex-col items-center justify-center bg-white overflow-hidden min-h-[60vh]">
       {!isYes ? (
-        <div className="text-center max-w-xl animate-fade-in">
+        <div className="text-center max-w-xl animate-fade-in w-full">
           <div className="mb-8 flex justify-center">
             <div className="p-4 bg-rose-50 rounded-full animate-bounce">
               <Heart size={64} className="text-rose-500" fill="currentColor" />
@@ -41,13 +42,13 @@ export const Proposal: React.FC = () => {
           </div>
           
           <h2 className="font-serif-romantic text-5xl md:text-6xl text-rose-700 mb-12">
-            Will you be my Valentine?
+            Vignesh, will you be my Valentine?
           </h2>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 relative h-32">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 relative h-40">
             <button 
               onClick={handleYes}
-              className="z-10 bg-rose-500 text-white px-12 py-4 rounded-full text-2xl font-bold shadow-xl hover:bg-rose-600 hover:scale-110 active:scale-95 transition-all duration-300"
+              className="z-10 bg-rose-500 text-white px-12 py-4 rounded-full text-2xl font-bold shadow-xl hover:bg-rose-600 hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer"
             >
               Yes! 💖
             </button>
@@ -55,8 +56,11 @@ export const Proposal: React.FC = () => {
             <button 
               onMouseEnter={moveNoButton}
               onClick={moveNoButton}
-              style={{ transform: `translate(${noButtonPos.x}px, ${noButtonPos.y}px)` }}
-              className="bg-gray-100 text-gray-500 px-8 py-4 rounded-full text-xl font-medium shadow-md transition-all duration-200 whitespace-nowrap"
+              style={{ 
+                transform: `translate(${noButtonPos.x}px, ${noButtonPos.y}px)`,
+                transition: 'transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1)'
+              }}
+              className="bg-gray-100 text-gray-500 px-8 py-4 rounded-full text-xl font-medium shadow-md whitespace-nowrap cursor-pointer z-0"
             >
               {getNoText()}
             </button>
@@ -69,7 +73,7 @@ export const Proposal: React.FC = () => {
             Yaaaay! 🎉
           </h2>
           <p className="text-rose-500 text-2xl md:text-3xl font-handwriting italic mb-8">
-            You just made me the happiest person in the world!
+            Vignesh, you just made me the happiest person in the world! I love you!
           </p>
           <div className="flex justify-center gap-2">
             {[...Array(5)].map((_, i) => (

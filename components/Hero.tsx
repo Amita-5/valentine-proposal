@@ -37,20 +37,20 @@ export const Hero: React.FC = () => {
       </div>
 
       <div className={`z-10 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-        <h1 className="font-serif-romantic text-5xl md:text-7xl lg:text-8xl text-rose-600 mb-6 drop-shadow-sm">
-          My Heart for You
+        <h1 className="font-serif-romantic text-5xl md:text-7xl lg:text-8xl text-rose-600 mb-6 drop-shadow-sm leading-tight">
+          Vignesh, this is <br className="hidden md:block" /> just for you...
         </h1>
         <p className="max-w-2xl mx-auto text-rose-400 text-lg md:text-xl font-light mb-12 italic leading-relaxed px-4">
-          I'm sorry it took me so long to find the perfect way to say this. 
-          Sometimes words aren't enough, but I hope this little space shows you even a fraction of what you mean to me.
+          I'm so sorry it took me a little while to find the perfect way to tell you how I feel. 
+          Sometimes my words get tangled, but my heart is always in the right place when it's with you.
         </p>
         
         <button 
           onClick={scrollNext}
-          className="group relative inline-flex items-center gap-2 bg-rose-500 text-white px-10 py-4 rounded-full text-lg font-medium shadow-xl hover:bg-rose-600 transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden"
+          className="group relative inline-flex items-center gap-2 bg-rose-500 text-white px-10 py-4 rounded-full text-lg font-medium shadow-xl hover:bg-rose-600 transition-all duration-300 hover:scale-105 active:scale-95 overflow-hidden cursor-pointer"
         >
           <span className="z-10 flex items-center gap-2">
-            Open My Heart <Heart size={20} fill="white" className="group-hover:animate-pulse" />
+            Click if you love surprises <Heart size={20} fill="white" className="group-hover:animate-pulse" />
           </span>
           <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
         </button>
