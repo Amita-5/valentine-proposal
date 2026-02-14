@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { Hero } from './components/Hero';
-import { Memories } from './components/Memories';
 import { LoveNote } from './components/LoveNote';
 import { Proposal } from './components/Proposal';
 import { GallerySection } from './components/GallerySection';
@@ -111,7 +110,6 @@ const App: React.FC = () => {
 
       <main ref={mainRef}>
         <Hero />
-        <Memories />
         <LoveNote />
         <Proposal />
         <GallerySection />
